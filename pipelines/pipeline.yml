@@ -1,0 +1,51 @@
+name: Node.js CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  
+  pull_request:
+    branches:
+      - main  
+
+# Job para ejecutar las pruebas unitarias
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22.12"
+
+      - name: Install dependencies
+        run: npm install  
+
+      - name: Run tests
+        run: npm test  
+
+  # Job para desplegar la API a AWS Lambda
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test  
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22.12"
+
+      - name: Install dependencies
+        run: npm install  
+
+      - name: Deploy to testing environment
+        run:          
+          git remote add heroku https://git.heroku.com/Proyecto_ChallengeGCV.git
+          git push heroku main  

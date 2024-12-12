@@ -1,0 +1,25 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Eduardo",
+      "email": "correo1@gmail.com",
+      "telefono": "+56911111111",
+      "fecha_registro": "2024-12-06"
+    },
+    {
+      "id": 2,
+      "name": "Andres",
+      "email": "correo2@gmail.com",
+      "telefono": "+56911111112",
+      "fecha_registro": "2024-12-06"
+    },
+    {
+      "id": 3,
+      "name": "Pedro",
+      "email": "correo3@gmail.com",
+      "telefono": "+56911111113",
+      "fecha_registro": "2024-12-06"
+    }
+  ]
+}
