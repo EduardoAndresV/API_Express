@@ -1,0 +1,8 @@
+#Version de YML
+version: "3.9"
+services:
+  challeg-v2:
+    build: .
+    ports:
+      #purto host:puerto contenedor
+      - "3000:3000"
